@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3百分比</title>
+    <style>
+        .wrapper{
+            width:200px;
+            height:200px;
+            margin:50px auto;
+            position:relative;
+        }
+        .wrapper:before{
+            position:absolute;
+            content:"";
+            display:block;
+            width:160px;
+            height:160px;
+            border-radius:100%;
+            border:20px solid #DC143C;
+            top:0;
+            left:0;
+        }
+        .wrapper .w{
+            width:100px;
+            height:200px;
+            position:absolute;
+            top:0;
+            overflow:hidden;
+        }
+        .wrapper .l{
+            left:0;
+        }
+        .wrapper .r{
+            right:0;
+        }
+        .wrapper .w .c{
+            width:160px;
+            height:160px;
+            border:20px solid transparent;
+            border-radius:100%;
+            transform:rotate(45deg);
+            position:absolute;
+            top:0;
+        }
+        .wrapper .l .lc{
+            border-left-color:#8a2be2;
+            border-bottom-color:#8a2be2;
+            animation:lMove 3s linear infinite alternate;
+        }
+        .wrapper .r .rc{
+            border-top-color:#8a2be2;
+            border-right-color:#8a2be2;
+            right:0;
+            animation:rMove 3s linear infinite alternate;
+        }
+        @keyframes rMove{
+            0%{transform:rotate(-135deg)}
+            50%,100%{transform:rotate(45deg)}
+        }
+        @keyframes lMove{
+            0%,50%{transform:rotate(-135deg)}
+            100%{transform:rotate(45deg)}
+        }
+
+
+        .wd:before{
+            width:200px;
+            height:200px;
+            border:none;
+            background:#DC143C;
+        }
+        .wrapper .w .d{
+            width:0;
+            height:0;
+            border:100px solid transparent;
+            border-radius:100%;
+            transform:rotate(45deg);
+            position:absolute;
+            top:0;
+        }
+        .wrapper .w .ld{
+            border-left-color:#8a2be2;
+            border-bottom-color:#8a2be2;
+            animation:lMove 3s linear infinite alternate;
+        }
+        .wrapper .w .rd{
+            border-top-color:#8a2be2;
+            border-right-color:#8a2be2;
+            right:0;
+            animation:rMove 3s linear infinite alternate;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="w l">
+        <div class="c lc"></div>
+    </div>
+    <div class="w r">
+        <div class="c rc"></div>
+    </div>
+</div>
+<div class="wrapper wd">
+    <div class="w l">
+        <div class="d ld"></div>
+    </div>
+    <div class="w r">
+        <div class="d rd"></div>
+    </div>
+</div>
+</body>
+</html>
